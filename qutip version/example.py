@@ -23,9 +23,11 @@ gamma = [0.1]
 
 Hc = [sigmax(), sigmay(), sigmaz()]
 
-Hc_coeff = [np.array([0. for i in range(0, len(times))]) for k in range(0, len(Hc))]
+Hc_coeff = [np.array([0. for i in range(0, len(times))])
+            for k in range(0, len(Hc))]
 
-ctrlgrape = grape_CramerRao.control(H0, rho_initial, times, Lvec, gamma, dH, Hc, Hc_coeff, epsilon)
+ctrlgrape = grape_CramerRao.control(
+    H0, rho_initial, times, Lvec, gamma, dH, Hc, Hc_coeff, epsilon)
 
 #ctrlgrape.Run('classical', M)
-#ctrlgrape.Run('quantum')
+# ctrlgrape.Run('quantum')
